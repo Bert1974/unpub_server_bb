@@ -2,6 +2,7 @@ import 'package:mongo_dart/mongo_dart.dart';
 import 'package:unpub/unpub.dart' as unpub;
 
 main(List<String> args) async {
+  print('Serving starting');
   final db = Db('mongodb://mongo4:27017/dart_pub');
   await db.open(); // make sure the MongoDB connection opened
 
