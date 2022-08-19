@@ -14,7 +14,7 @@ services:
     networks:
       - mongo
     volumes:
-      - E:\unpub-server-bb\data:/app
+      - ./data:/app
     ports:
       - 4000:4000
     links:
