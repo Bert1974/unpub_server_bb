@@ -29,6 +29,7 @@ FROM dart
 #WORKDIR /unpub_server_bb
 WORKDIR /app
 COPY ./unpub_server_bb ./
+COPY ./unpub ./
 RUN dart pub get
 #run cp ./app.dart /root/.pub-cache/hosted/pub.dartlang.org/unpub-2.0.0/lib/src/app.dart
 
