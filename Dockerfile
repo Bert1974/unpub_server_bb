@@ -30,10 +30,9 @@ FROM dart
 WORKDIR /app
 COPY ./unpub_server_bb ./unpub_server_bb
 COPY ./unpub ./unpub
-WORKDIR /app/unpub_server_bb
-RUN dart pub get
+RUN cd /app/unpub/unpub && dart pub get && ls
+RUN cd /app/unpub_server_bb && dart pub get && ls
 #run cp ./app.dart /root/.pub-cache/hosted/pub.dartlang.org/unpub-2.0.0/lib/src/app.dart
 
-#run dart --version
-RUN ls
-ENTRYPOINT ["dart", "run"]
+WORKDIR /app/unpub_server_bb
+ENTRYPOINT ["dart", "run" ]

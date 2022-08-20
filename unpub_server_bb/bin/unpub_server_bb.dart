@@ -7,7 +7,6 @@ main(List<String> args) async {
   await db.open(); // make sure the MongoDB connection opened
 
   final app = unpub.App(
-  print('Serving starting');
     metaStore: unpub.MongoStore(db),
     packageStore: unpub.FileStore('./data'),
   );

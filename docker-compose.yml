@@ -14,7 +14,7 @@ services:
     networks:
       - mongo
     volumes:
-      - ./data:/app
+      - ./data:/app/data
     ports:
       - 4000:4000
     links:
