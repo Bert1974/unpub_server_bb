@@ -1,7 +1,7 @@
 services:
-  mongo4:
-    container_name: mongo4
-    image: mongo:4.4.6
+  mongodb:
+    container_name: mongo
+    image: mongo:latest
     ports:
       - "27017:27017"
     restart: always
@@ -18,12 +18,11 @@ services:
     ports:
       - 4000:4000
     links:
-        - mongo4
+        - mongodb
     depends_on:
-        - mongo4
+        - mongodb
     environment:
-      DB_URL: mongodb://mongo4:27017/pub
-      WAIT_HOSTS: mongo4:27017
+      DB_URL: mongodb://mongodb:27017/pub
 
 networks:
     mongo:

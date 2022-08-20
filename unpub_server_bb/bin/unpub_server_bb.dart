@@ -3,7 +3,7 @@ import 'package:unpub/unpub.dart' as unpub;
 
 main(List<String> args) async {
   print('Serving starting');
-  final db = Db('mongodb://mongo4:27017/dart_pub');
+  final db = Db('mongodb://mongodb:27017/dart_pub');
   await db.open(); // make sure the MongoDB connection opened
 
   final app = unpub.App(
