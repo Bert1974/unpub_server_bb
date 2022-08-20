@@ -28,8 +28,9 @@ FROM dart
 #UN dart upgrade 
 #WORKDIR /unpub_server_bb
 WORKDIR /app
-COPY ./unpub_server_bb ./
-COPY ./unpub ./
+COPY ./unpub_server_bb ./unpub_server_bb
+COPY ./unpub ./unpub
+WORKDIR /app/unpub_server_bb
 RUN dart pub get
 #run cp ./app.dart /root/.pub-cache/hosted/pub.dartlang.org/unpub-2.0.0/lib/src/app.dart
 
