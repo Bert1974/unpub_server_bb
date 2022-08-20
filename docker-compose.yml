@@ -1,31 +1,31 @@
 services:
-  mongodb:
+  mongodb4:
     container_name: mongo
     image: mongo:4.4.6
     ports:
       - "27017:27017"
     restart: always
     networks:
-      - mongo
+      - mongo4
   dart_unpub:
     build: .
     container_name: dart_unpub
 #    restart: always
     networks:
-      - mongo
+      - mongo4
     volumes:
       - ./data:/app/data
     ports:
       - 4000:4000
     links:
-        - mongodb
+        - mongodb4
     depends_on:
-        - mongodb
+        - mongodb4
     environment:
       DB_URL: mongodb://mongodb:27017/pub
 
 networks:
-    mongo:
+    mongo4:
       driver: bridge
 #https://hub.docker.com/r/trevorwang/docker-unpub
 #https://hub.docker.com/r/trevorwang/docker-unpub/builds
